@@ -3,183 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Undangan Pernikahan Priadi & Salsabila</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fffaf2;
-      color: #444;
-      overflow: hidden;
-    }
-    .opening {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100vh;
-      background: linear-gradient(#fef6e4, #fff);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-      text-align: center;
-    }
-    .opening h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-      color: #b78a28;
-    }
-    .open-btn {
-      padding: 0.8rem 1.8rem;
-      font-size: 1rem;
-      background: #b78a28;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .content {
-      padding: 2rem 1rem;
-      max-width: 700px;
-      margin: auto;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    .countdown {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #b78a28;
-    }
-    .quote {
-      font-style: italic;
-      background: #fff3d1;
-      padding: 1rem;
-      border-left: 4px solid #d4af37;
-      margin: 1rem 0;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      background: #fffaf2;
-      color: #666;
-    }
-    .map-container iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-    }
-    .rekening-box {
-      background: #f6f0dd;
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-    }
-    .copy-btn {
-      background: #b78a28;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      margin-top: 0.5rem;
-      cursor: pointer;
-    }
-  </style>
+  <title>Undangan Melan & Anton</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Musik Latar -->
-<audio id="bgMusic" loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
-</audio>
+<!-- MUSIK -->
+<audio id="bg-music" src="assets/background.mp3" autoplay loop></audio>
 
-<!-- Pembuka -->
-<div class="opening" id="opening">
-  <h1>Priadi & Salsabila</h1>
-  <p>Undangan Pernikahan</p>
-  <button class="open-btn" onclick="openInvitation()">Buka Undangan</button>
-</div>
+<!-- HALAMAN PEMBUKA -->
+<section class="hero" id="home">
+  <h1>The Wedding of</h1>
+  <img src="assets/wedding.jpg" alt="Melan & Anton" class="hero-img">
+  <h2>Melan & Anton</h2>
+  <p>Kepada Yth Bapak/Ibu/Saudara/i<br>Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i</p>
+  <a href="#quote" class="btn">Buka Undangan</a>
+</section>
 
-<!-- Konten Utama -->
-<div id="mainContent" style="display:none;">
-  <div class="content">
-    
-    <div class="section">
-      <h2>Hitung Mundur</h2>
-      <p class="countdown" id="countdown"></p>
+<!-- HALAMAN QUOTE -->
+<section class="quote" id="quote">
+  <p>"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu merasa tenteram kepadanya. Dan Dia menjadikan di antaramu rasa kasih dan sayang."<br><strong>QS. Ar-Rum: 21</strong></p>
+</section>
+
+<!-- PROFIL PASANGAN -->
+<section class="profil" id="profil">
+  <h2>Profil Pasangan</h2>
+  <div class="pasangan">
+    <div>
+      <h3>Mempelai Wanita</h3>
+      <p><strong>Melandari, S.Sos</strong><br>(Melan)<br>Putri Ketiga Bpk. Samsul & Ibu Yusmaini</p>
     </div>
-
-    <div class="section">
-      <h2>Detail Acara</h2>
-      <p><strong>Akad Nikah:</strong><br/>Sabtu, 20 Juli 2025, pukul 08.00 WIB</p>
-      <p><strong>Resepsi:</strong><br/>Sabtu, 20 Juli 2025, pukul 11.00 WIB</p>
-      <p><strong>Lokasi:</strong><br/>Gedung Serbaguna, Jakarta</p>
-    </div>
-
-    <div class="section map-container">
-      <h2>Lokasi Acara</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." allowfullscreen></iframe>
-    </div>
-
-    <div class="section rekening-box">
-      <h3>Nomor Rekening</h3>
-      <p>1234567890 (BCA a.n. Priadi)</p>
-      <button class="copy-btn" onclick="copyRekening()">Salin Nomor</button>
-    </div>
-
-    <div class="section">
-      <h2>Doa & Harapan</h2>
-      <div class="quote">
-        “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu merasa tenteram kepadanya...” (QS. Ar-Rum: 21)
-      </div>
+    <div>
+      <h3>Mempelai Pria</h3>
+      <p><strong>Anton Idris</strong><br>(Anton)<br>Putra Pertama Bpk. Alga Masri & Ibu Nurhanita</p>
     </div>
   </div>
+</section>
 
-  <footer>
-    Terima kasih atas doa dan kehadirannya.<br/>
-    Priadi & Salsabila
-  </footer>
-</div>
+<!-- TANGGAL & WAKTU -->
+<section class="acara" id="acara">
+  <h2>Waktu & Tempat</h2>
+  <p><strong>Akad:</strong><br>Senin, 16 Juni 2025 pukul 11.00 WIB - selesai</p>
+  <p><strong>Resepsi:</strong><br>Minggu, 22 Juni 2025 pukul 10.00 WIB - selesai</p>
+  <div id="countdown"></div>
+</section>
 
-<!-- Script -->
-<script>
-  function openInvitation() {
-    document.getElementById("opening").style.display = "none";
-    document.getElementById("mainContent").style.display = "block";
-    document.body.style.overflow = "auto";
-    document.getElementById("bgMusic").play();
-  }
+<!-- LOKASI -->
+<section class="lokasi" id="lokasi">
+  <h2>Lokasi Acara</h2>
+  <iframe src="https://maps.google.com/maps?q=Palembang&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0;" allowfullscreen></iframe>
+</section>
 
-  function copyRekening() {
-    const rekening = "1234567890";
-    navigator.clipboard.writeText(rekening).then(() => {
-      alert("Nomor rekening disalin!");
-    });
-  }
+<!-- NOMOR REKENING -->
+<section class="rekening" id="rekening">
+  <h2>Kirim Hadiah</h2>
+  <p>No. Rekening: <strong id="norek">1313131313111</strong></p>
+  <button onclick="salinRekening()">Salin Nomor Rekening</button>
+</section>
 
-  // Countdown
-  const countdownDate = new Date("2025-07-20T08:00:00").getTime();
-  const countdownElement = document.getElementById("countdown");
+<!-- PENUTUP -->
+<section class="penutup" id="penutup">
+  <p>Merupakan kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+  <h3>Melan & Anton</h3>
+</section>
 
-  const x = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = countdownDate - now;
-
-    if (distance < 0) {
-      clearInterval(x);
-      countdownElement.innerHTML = "Acara telah berlangsung.";
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownElement.innerHTML = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
-  }, 1000);
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
